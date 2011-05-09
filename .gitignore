@@ -1,0 +1,16 @@
+._*
+.DS_Store
+*.gem
+*.log
+*.sqlite3
+*.sw?
+**/._*
+examples/rails_root/features/step_definitions/email_steps.rb
+examples/rails_root/vendor/plugins/email_spec
+examples/rails3_root/features/step_definitions/email_steps.rb
+examples/rails3_root/vendor/plugins/email_spec
+examples/sinatra_root/features/step_definitions/email_steps.rb
+pkg
+rerun.txt
+.bundle
+.rvmrc
