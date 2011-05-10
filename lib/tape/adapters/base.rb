@@ -24,10 +24,9 @@ module Tape
       end
 
       def by_recipient(address)
-        all.select { |email|
-          (email.to && email.to.include?(address)) ||
-          (email.bcc && email.bcc.include?(address)) ||
-          (email.cc && email.cc.include?(address)) }
+        all.select do |mail|
+          mail.destinations.include?(address)
+        end
       end
 
       def parse(mail)
