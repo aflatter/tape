@@ -1,19 +1,27 @@
+require "active_support/dependencies/autoload"
+
 module Tape
 
   module EmailSpec
-    autoload :Helpers,          'tape/email_spec/helpers'
-    autoload :Matchers,         'tape/email_spec/matchers'
-    autoload :AddressConverter, 'tape/email_spec/address_converter'
+    extend ActiveSupport::Autoload
+
+    autoload :Helpers
+    autoload :Matchers
+    autoload :AddressConverter
   end
 
   module Adapters
-    autoload :Base, 'tape/adapters/base'
-    autoload :Pony, 'tape/adapters/pony'
+    extend ActiveSupport::Autoload
+
+    autoload :Base
+    autoload :Pony
 
     module ActionMailer
-      autoload :Cache,   'tape/adapters/action_mailer/cache'
-      autoload :Maildir, 'tape/adapters/action_mailer/maildir'
-      autoload :Test,    'tape/adapters/action_mailer/test'
+      extend ActiveSupport::Autoload
+
+      autoload :Cache
+      autoload :Maildir
+      autoload :Test
     end
   end
 
