@@ -1,13 +1,5 @@
 require 'spec_helper'
 
-class Tape::Adapters::Foo
-  attr_reader :options
-
-  def initialize(options)
-    @options = options
-  end
-end
-
 describe Tape do
 
   context ".adapter" do

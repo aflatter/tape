@@ -9,28 +9,6 @@ require 'tape'
 
 require 'fakefs/spec_helpers'
 
-class Notifier < ActionMailer::Base
-  default :from        => 'sender@example.com',
-          :return_path => 'return@example.com'
-
-  def hello(opts = {})
-    defaults = {:subject => 'Hello World', :to => "recipient@example.com"}
-
-    mail(defaults.merge(opts)) do |format|
-      format.text { 'Hello World' }
-    end
-  end
-end
-
-class Mail::Message
-  def with_inspect_stub(str = "email")
-    stub!(:inspect).and_return(str)
-    self
-  end
-end
-
-  RSpec.configure do |config|
-  config.mock_with :rspec
-end
+Dir.glob(File.join(File.dirname(__FILE__), 'support', '**', '*.rb')).each { |file| require file }
 
 ENV['TMPDIR'] = File.expand_path '../../tmp', __FILE__
