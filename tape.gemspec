@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
- 
+
+require 'tape/version'
+
 Gem::Specification.new do |s|
   s.name        = "tape"
-  s.version     = "0.0.1"
+  s.version     = Tape::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Alexander Flatter"]
   s.email       = ["aflatter@farbenmeer.net"]

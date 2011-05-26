@@ -5,6 +5,7 @@ module Tape
 
   autoload :Adapters
   autoload :EmailSpec
+  autoload :Version
 
   def self.configure(adapter, options = {})
     klass = "Tape::Adapters::#{adapter.to_s.camelize}".constantize
